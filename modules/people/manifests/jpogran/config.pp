@@ -21,11 +21,6 @@ class people::jpogran::config(
     position => 'left',
   }
 
-  osx::dock::hot_corner { 'Show the desktop':
-    position => 'Bottom Right',
-    action => 'Put Display to Sleep'
-  }
-
   $recovery_message = "James Pograns Macbook Air. If found, please email james.pogran@puppetlabs.com or call 814-440-0882."
   osx::recovery_message { $recovery_message: }
 

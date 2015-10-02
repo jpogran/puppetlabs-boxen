@@ -16,6 +16,10 @@ class people::jpogran::repositories (
     source  => 'zsh-users/zsh-syntax-highlighting',
   }
 
+  File <| title == "/Users/${::boxen_user}/.gemrc" |> {
+    source => "${my_sourcedir}/my/dotfiles/.gemrc"
+  }
+
   file { "${my_homedir}/.gitconfig":
     ensure  => link,
     mode    => '0644',

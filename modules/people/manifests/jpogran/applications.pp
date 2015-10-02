@@ -12,30 +12,37 @@ class people::jpogran::applications{
   ]: }
 
   package { [
-    'tree',
     'curl',
     'gawk',
+    'imagemagick',
+    'libxml2',
+    'nmap',
+    'packer',
+    'rust',
+    'tmux',
+    'tree',
     'wget',
     'zsh',
-    'nmap',
-    'tmux',
-    'rust',
-    'libxml2',
-    'imagemagick',
-    'packer'
   ]: }
 
   package { [
     '1password',
     'alfred',
-    'google-chrome',
     'divvy',
     'dropbox',
+    'google-chrome',
+    'hipchat',
     'iterm2',
     'skype',
-    'hipchat',
     'sqwiggle',
     'vlc',
+    'font-envy-code-r',
+    #'font-inconsolata-for-powerline',
+    #'font-meslo-lg-for-powerline',
+    #'packer',
+    #'vagrant',
+    #'vagrant-manager',
+    #'virtualbox',
     ]: provider => 'brewcask', install_options => ['--appdir=/Applications'],
   }
 
@@ -45,7 +52,15 @@ class people::jpogran::applications{
     ruby_version => '*',
   }
 
+  ruby_gem { 'stickler':
+    gem          => 'stickler',
+    version      => '~> 2.4',
+    ruby_version => '2.2.2',
+  }
+
   ruby::version { '2.0.0-p645': }
+  ruby::version { '2.1.5': }
+  ruby::version { '2.1.6': }
   ruby::version { '2.2.2': }
 
   exec { 'Font: Inconsolata':
