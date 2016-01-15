@@ -14,6 +14,7 @@ class people::jpogran::repositories (
 
   repository { "${my_sourcedir}/third/oh-my-zsh/custom/plugins/zsh-syntax-highlighting":
     source  => 'zsh-users/zsh-syntax-highlighting',
+    require => Repository["${my_sourcedir}/third/oh-my-zsh"],
   }
 
   File <| title == "/Users/${::boxen_user}/.gemrc" |> {

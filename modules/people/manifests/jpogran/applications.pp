@@ -18,31 +18,28 @@ class people::jpogran::applications{
     'libxml2',
     'nmap',
     'packer',
-    'rust',
     'tmux',
     'tree',
     'wget',
     'zsh',
+    'icu4c'
   ]: }
 
   package { [
-    '1password',
-    'alfred',
+    #'alfred',
     'divvy',
     'dropbox',
     'google-chrome',
     'hipchat',
     'iterm2',
     'skype',
-    'sqwiggle',
-    'vlc',
     'font-envy-code-r',
     #'font-inconsolata-for-powerline',
     #'font-meslo-lg-for-powerline',
     #'packer',
-    #'vagrant',
-    #'vagrant-manager',
-    #'virtualbox',
+    # 'vagrant',
+    # 'vagrant-manager',
+    # 'virtualbox',
     ]: provider => 'brewcask', install_options => ['--appdir=/Applications'],
   }
 
@@ -63,8 +60,4 @@ class people::jpogran::applications{
   ruby::version { '2.1.6': }
   ruby::version { '2.2.2': }
 
-  exec { 'Font: Inconsolata':
-    command => "curl -L http://www.levien.com/type/myfonts/Inconsolata.otf -o /Users/${::boxen_user}/Library/Fonts/Inconsolata.otf",
-    creates => "/Users/${::boxen_user}/Library/Fonts/Inconsolata.otf"
-  }
 }

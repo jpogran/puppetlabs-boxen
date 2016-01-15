@@ -21,7 +21,7 @@ class people::jpogran::config(
     position => 'left',
   }
 
-  $recovery_message = "James Pograns Macbook Air. If found, please email james.pogran@puppetlabs.com or call 814-440-0882."
+  $recovery_message = "If found, please email james.pogran@puppetlabs.com or call 814-440-0882"
   osx::recovery_message { $recovery_message: }
 
   # Changes the default shell to the zsh version we get from Homebrew
